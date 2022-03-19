@@ -1,0 +1,130 @@
+<resources>
+    <string name="app_name">NextCrmDependencyInjection</string>
+
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="nav_header_title" translatable="false">Android Studio</string>
+    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
+    <string name="nav_header_desc" translatable="false">Navigation header</string>
+    <string name="action_settings" translatable="false">Settings</string>
+
+    <string name="back_again_to_exit" translatable="false">Press back again to exit.</string>
+    <string name="txt_movie" translatable="false">Movie</string>
+    <string name="txt_more" translatable="false">More</string>
+    <string name="txt_popular" translatable="false">Popular</string>
+    <string name="txt_nowplaying" translatable="false">Now</string>
+    <string name="txt_back" translatable="false">Back</string>
+
+    <string name="menu_home" translatable="false">Home</string>
+    <string name="menu_gallery" translatable="false">Gallery</string>
+    <string name="menu_slideshow" translatable="false">Slideshow</string>
+
+    <string name="txt_hello" translatable="false">Xin chào!</string>
+    <string name="txt_login_to_continue" translatable="false">Đăng nhập để tiếp tục...</string>
+    <string name="txt_username" translatable="false">Username</string>
+    <string name="txt_password" translatable="false">Password</string>
+    <string name="txt_login" translatable="false">Đăng nhập</string>
+    <string name="txt_other_domain" translatable="false">Tên miền khác!</string>
+    <string name="txt_forgot_password" translatable="false">Quên mật khẩu?</string>
+    <string name="txt_domain" translatable="false">Tên miền</string>
+    <string name="txt_continue" translatable="false">Tiếp tục</string>
+    <string name="txt_domain_hosco" translatable="false">.nextcrm.vn</string>
+    <string name="txt_noti" translatable="false">Thông báo</string>
+    <string name="txt_title_error" translatable="false">Có lỗi xảy ra</string>
+    <string name="txt_notice" translatable="false">Chú ý</string>
+    <string name="txt_agree" translatable="false">Đồng ý</string>
+    <string name="txt_decline" translatable="false">Không đồng ý</string>
+    <string name="txt_ok" translatable="false">OK</string>
+    <string name="txt_cancel" translatable="false">Huỷ</string>
+    <string name="txt_error_valid_common" translatable="false">Vui lòng nhập đầy đủ thông tin</string>
+    <string name="txt_error_valid_domain" translatable="false">Vui lòng nhập tên miền</string>
+    <string name="txt_error_valid_email" translatable="false">Vui lòng nhập email đúng định dạng</string>
+    <string name="title_activity_menu" translatable="false">MenuActivity</string>
+    <string name="txt_add_action" translatable="false">Thêm</string>
+    <string name="txt_delete" translatable="false">Xoá</string>
+    <string name="txt_done" translatable="false">Xong</string>
+    <string name="txt_customer" translatable="false">Khách hàng</string>
+    <string name="txt_internal" translatable="false">Nội bộ</string>
+    <string name="txt_personal" translatable="false">Cá nhân</string>
+    <string name="txt_device" translatable="false">Thiết bị</string>
+    <string name="txt_available" translatable="false">Hoạt động</string>
+    <string name="txt_lunch_break" translatable="false">Nghỉ trưa</string>
+    <string name="txt_short_break" translatable="false">Tạm nghỉ</string>
+    <string name="txt_not_available" translatable="false">Không hoạt động</string>
+    <string name="txt_extension" translatable="false">Vai trò</string>
+    <string name="txt_email" translatable="false">Email</string>
+    <string name="txt_numbers_list" translatable="false">Hotline đang sử dụng</string>
+    <string name="txt_version" translatable="false">Phiên bản ứng dụng</string>
+    <string name="txt_change_password" translatable="false">Đổi mật khẩu</string>
+    <string name="txt_logout" translatable="false">Đăng xuất</string>
+    <string name="txt_logout_question" translatable="false">Đăng xuất ứng dụng ngay bây giờ?</string>
+    <string name="txt_hint_note" translatable="false">Ghi chú...</string>
+    <string name="txt_add_note" translatable="false">Thêm ghi chú</string>
+    <string name="txt_add_contact" translatable="false">Thêm liên hệ</string>
+    <string name="txt_add_note_toolbar" translatable="false">Thêm mới phiếu ghi</string>
+    <string name="txt_add" translatable="false">Thêm</string>
+    <string name="txt_ext" translatable="false">Số máy lẻ</string>
+    <string name="txt_contact_phone_number" translatable="false">Điện thoại liên hệ</string>
+    <string name="txt_no_identify" translatable="false">Không xác định</string>
+    <string name="txt_title_filter_ticket" translatable="false">Bộ lọc chi tiết</string>
+    <string name="txt_refresh" translatable="false">Làm mới</string>
+    <string name="txt_loading_login" translatable="false">Đang đăng nhập, vui lòng chờ...</string>
+    <string name="txt_not_connect" translatable="false">Chưa kết nối với tổng đài. Vui lòng kiểm tra lại</string>
+
+    <string name="menu_note" translatable="false">Phiếu ghi</string>
+    <string name="txt_title_all_notes" translatable="false">Tất cả phiếu ghi</string>
+    <string name="menu_contact" translatable="false">Danh bạ</string>
+    <string name="menu_history" translatable="false">Lịch sử</string>
+    <string name="menu_setting" translatable="false">Cài đặt</string>
+    <string name="title_activity_splash" translatable="false">SplashActivity</string>
+    <string name="dummy_button" translatable="false">Dummy Button</string>
+    <string name="dummy_content" translatable="false">DUMMY\nCONTENT</string>
+    <string name="default_phone_app_prompt" translatable="false">Vui lòng đặt NextCrm Call Center là app mặc định</string>
+    <string name="unknown_caller" translatable="false">Unknown</string>
+    <string name="is_calling" translatable="false">Đang gọi…</string>
+    <string name="dialing" translatable="false">Quay số…</string>
+    <string name="incoming_call" translatable="false">Cuộc gọi đến</string>
+    <string name="outgoing_call" translatable="false">Cuộc gọi đi</string>
+    <string name="call_ended" translatable="false">Cuộc gọi đã kết thúc</string>
+    <string name="call_ending" translatable="false">Kết thúc cuộc gọi</string>
+    <string name="remove_confirmation" translatable="false">Bạn có chắc chắn muốn xóa các mục đã chọn khỏi Lịch sử cuộc gọi không? </string>
+    <string name="show_grouped_calls" translatable="false"> Hiển thị các cuộc gọi được nhóm </string>
+    <string name="select_sim" translatable="false">Vui lòng chọn SIM để thực hiện cuộc gọi này</string>
+    <string name="always_use_this_sim" translatable="false"> Luôn sử dụng SIM này cho số này </string>
+    <string name="unset_default_sim" translatable="false"> Bỏ đặt SIM mặc định </string>
+    <string name="send_sms" translatable="false"> Gửi SMS </string>
+    <string name="ongoing_call" translatable="false"> Cuộc gọi đang diễn ra </string>
+    <string name="dialer" translatable="false">Trình quay số </string>
+    <string name="dialpad" translatable="false">Quay số </string>
+    <string name="txt_loading" translatable="false">Vui lòng chờ...</string>
+    <string name="txt_permission_contact" translatable="false">Ứng dụng chưa được cấp quyền đọc danh bạ</string>
+    <string name="txt_permission_contact_dialog" translatable="false">Ứng dụng chưa được cấp quyền đọc danh bạ, vui lòng cấp quyền để tiếp tục sử dụng dịch vụ!</string>
+    <!--    <string name="txt_permission_contact_click" translatable="false">Nhấn vào đây để cấp quyền và tiếp tục sử dụng dịch vụ!</string>-->
+    <string name="txt_permission_contact_click" translatable="false"><font color='#000000'>Nhấn vào đây </font><font color='#8d8d8d'>để cấp quyền và tiếp tục sử dụng dịch vụ!</font></string>
+    <string name="txt_opps" translatable="false">Opps!</string>
+    <string name="txt_hint_search_contact" translatable="false">Tên hoặc số điện thoại...</string>
+    <string name="txt_company" translatable="false">Công ty</string>
+    <string name="txt_name" translatable="false">Tên</string>
+    <string name="txt_number_phone" translatable="false">Số điện thoại</string>
+    <string name="txt_contact" translatable="false">Liên hệ</string>
+    <string name="txt_note_title" translatable="false">Tiêu đề phiếu ghi</string>
+    <string name="txt_status" translatable="false">Trạng thái</string>
+    <string name="txt_type" translatable="false">Loại</string>
+    <string name="txt_priority" translatable="false">Ưu tiên</string>
+    <string name="txt_hint_contact_input" translatable="false">Nhập liên hệ</string>
+    <string name="txt_hint_note_input" translatable="false">Nhập ghi chú nội bộ</string>
+    <string name="txt_title_internal_note" translatable="false">Ghi chú nội bộ</string>
+    <string name="txt_second" translatable="false">Giây</string>
+    <string name="txt_minute" translatable="false">Phút</string>
+    <string name="txt_hour" translatable="false">Giờ</string>
+    <string name="txt_day" translatable="false">Ngày</string>
+    <string name="txt_employee" translatable="false">Nhân viên:</string>
+    <string name="txt_not_have_care_employee" translatable="false">Chưa có nhân viên phụ trách:</string>
+    <string name="txt_not_have_care_employee1" translatable="false">Chưa có nhân viên phụ trách</string>
+    <string name="txt_loading_get_info_phone_number" translatable="false">Đang lấy thông tin khách hàng, vui lòng chờ...</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+</resources>
