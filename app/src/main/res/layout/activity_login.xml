@@ -64,6 +64,7 @@ tools:context=".ui.login.LoginActivity">
             android:textSize="@dimen/sp16" />
 
         <EditText
+            android:text="demo"
             android:id="@+id/edUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -84,6 +85,7 @@ tools:context=".ui.login.LoginActivity">
             <EditText
                 android:id="@+id/edPassword"
                 android:layout_width="match_parent"
+                android:text="123456"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorApp"
                 android:fontFamily="@font/sfprodisplay_medium"

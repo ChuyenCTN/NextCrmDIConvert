@@ -1,13 +1,14 @@
-package com.me.nextcrmdependencyinjection.ui.ui.dashboard
+package com.me.nextcrmdependencyinjection.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.me.nextcrmdependencyinjection.base.BaseViewModel
 
-class DashboardViewModel : ViewModel() {
+class HomeViewModel : BaseViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is dashboard Fragment"
+        value = "This is home Fragment"
     }
     val text: LiveData<String> = _text
 }

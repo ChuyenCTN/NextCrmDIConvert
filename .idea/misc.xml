@@ -4,9 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/bg_login_button.xml" value="0.21" />
+        <entry key="app/src/main/res/drawable/ic_baseline_arrow_right_alt_16.xml" value="0.21" />
+        <entry key="app/src/main/res/drawable/ic_baseline_call_18.xml" value="0.21" />
+        <entry key="app/src/main/res/drawable/ic_baseline_remove_circle.xml" value="0.21" />
         <entry key="app/src/main/res/drawable/ic_baseline_visibility.xml" value="0.21" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.14791666666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.30416666666666664" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.30416666666666664" />
+        <entry key="app/src/main/res/layout/item_history_list.xml" value="0.30416666666666664" />
       </map>
     </option>
   </component>

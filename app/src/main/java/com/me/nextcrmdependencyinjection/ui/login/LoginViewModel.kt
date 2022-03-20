@@ -19,13 +19,13 @@ import com.me.nextcrmdependencyinjection.network.remote.auth.AuthBuilder
 import com.me.nextcrmdependencyinjection.network.remote.auth.AuthRequest
 import com.me.nextcrmdependencyinjection.network.remote.auth.AuthResponse
 import com.me.nextcrmdependencyinjection.network.remote.auth.CustommerResponse
+import com.me.nextcrmdependencyinjection.ui.home.HomeActivity
 import com.me.nextcrmdependencyinjection.utils.SharePreferenceUtils
 import io.reactivex.Completable
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-import java.util.*
 import java.util.concurrent.TimeUnit
 
 class LoginViewModel : BaseViewModel() {
@@ -164,8 +164,8 @@ class LoginViewModel : BaseViewModel() {
         } else {
             Completable.timer(2, TimeUnit.SECONDS, AndroidSchedulers.mainThread())
                 .subscribe {
-//                    activity.startActivity(Intent(activiØty, DomainActivity::class.java))
-//                    activity.finish()
+                    activity.startActivity(Intent(activity, HomeActivity::class.java))
+                    activity.finish()
                 }
         }
     }

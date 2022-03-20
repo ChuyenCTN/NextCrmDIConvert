@@ -13,14 +13,14 @@ import com.hosco.nextcrm.callcenter.common.Const
 import com.hosco.nextcrm.callcenter.common.DialogUtils
 import com.me.nextcrmdependencyinjection.R
 import com.me.nextcrmdependencyinjection.base.BaseActivity
-import com.me.nextcrmdependencyinjection.ui.MainActivity
+import com.me.nextcrmdependencyinjection.ui.home.HomeActivity
 import com.me.nextcrmdependencyinjection.utils.SharePreferenceUtils
 import com.thekhaeng.pushdownanim.PushDownAnim
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : BaseActivity() {
     var viewModel: LoginViewModel = LoginViewModel()
-    var _domain = ""
+    var _domain = "hosco"
 
     override fun getRootLayoutId(): Int {
         return R.layout.activity_login
@@ -39,6 +39,7 @@ class LoginActivity : BaseActivity() {
                 false
             }
         }
+        viewModel.checkAutoLogin(this)
         return super.onCreateView(parent, name, context, attrs)
     }
 
@@ -51,14 +52,15 @@ class LoginActivity : BaseActivity() {
     override fun setupView(savedInstanceState: Bundle?) {
         edPassword.transformationMethod = PasswordTransformationMethod.getInstance()
         imgShowHidePass.setImageDrawable(getDrawable(R.drawable.ic_baseline_visibility_off))
-        _domain = SharePreferenceUtils.getInstances().getDomain()
+//        _domain = SharePreferenceUtils.getInstances().getDomain()
+//        _domain = SharePreferenceUtils.getInstances().getDomain()
         if (_domain.isEmpty())
             intent.let {
                 intent.getStringExtra(Const.DATA_DOMAIN).let { _domain = it.toString() }
             }
 
         viewModel.dataLoginResponse().observe(this, {
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, HomeActivity::class.java))
             finish()
         })
 
