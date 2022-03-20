@@ -7,9 +7,15 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.ProcessLifecycleOwner
+import com.me.nextcrmdependencyinjection.di.component.CrmComponent
+import com.me.nextcrmdependencyinjection.di.component.DaggerCrmComponent
+import com.me.nextcrmdependencyinjection.di.module.ApplicationModule
+import com.me.nextcrmdependencyinjection.di.module.NetWorkModule
 
 
 class CrmAppLication : Application(), LifecycleObserver {
+
+    lateinit var component: CrmComponent
 
     companion object {
         @SuppressLint("StaticFieldLeak")
@@ -21,6 +27,10 @@ class CrmAppLication : Application(), LifecycleObserver {
         context = applicationContext
         setupLifecycleListener()
 
+        component = DaggerCrmComponent.builder()
+            .applicationModule(ApplicationModule(this))
+            .netWorkModule(NetWorkModule())
+            .build()
     }
 
 
@@ -38,6 +48,8 @@ class CrmAppLication : Application(), LifecycleObserver {
     fun onMoveToBackground() {
         android.util.Log.d("My_Lifecycle", "Moving to background…")
     }
+
+
 
 
 }
