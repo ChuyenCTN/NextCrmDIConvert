@@ -2,35 +2,32 @@ package com.me.nextcrmdependencyinjection.ui.home.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.databinding.BindingAdapter
 import androidx.databinding.ViewDataBinding
+import androidx.paging.PagingDataAdapter
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.me.nextcrmdependencyinjection.BR
-
 import com.hosco.nextcrm.callcenter.model.response.HistoryResponse
-import com.me.nextcrmdependencyinjection.R
+import com.me.nextcrmdependencyinjection.BR
 import com.me.nextcrmdependencyinjection.databinding.ItemHistoryListBinding
 
-class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.ViewHolder>() {
+class HistoryAdapter : PagingDataAdapter<HistoryResponse, HistoryAdapter.ViewHolder>(COMPARATOR) {
 
-    var responseList: ArrayList<HistoryResponse> = ArrayList()
+    companion object {
+        private val COMPARATOR = object : DiffUtil.ItemCallback<HistoryResponse>() {
+            override fun areItemsTheSame(
+                oldItem: HistoryResponse,
+                newItem: HistoryResponse
+            ): Boolean {
+                return oldItem.id == newItem.id
+            }
 
-    fun addMore(data: ArrayList<HistoryResponse>) {
-        val countCurrent = itemCount
-        responseList.addAll(data)
-        notifyItemRangeInserted(countCurrent, itemCount)
-    }
-
-    fun clearData() {
-        this.responseList.clear()
-        notifyDataSetChanged()
-    }
-
-    fun setData(data: ArrayList<HistoryResponse>) {
-        responseList.clear()
-        responseList.addAll(data)
-        notifyDataSetChanged()
+            override fun areContentsTheSame(
+                oldItem: HistoryResponse,
+                newItem: HistoryResponse
+            ): Boolean {
+                return oldItem == newItem
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -40,11 +37,9 @@ class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.fillData(responseList[position])
-    }
-
-    override fun getItemCount(): Int {
-        return responseList.size
+        getItem(position)?.let {
+            holder.fillData(it)
+        }
     }
 
     class ViewHolder constructor(val databinding: ViewDataBinding) :
@@ -56,30 +51,5 @@ class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.ViewHolder>() {
     }
 }
 
-@BindingAdapter("textDuration")
-fun loadTextDuration(view: TextView, seconds: Int) {
-    seconds.let {
-        val sec = seconds % 60
-        val minutes = seconds % 3600 / 60
-        val hours = seconds % 86400 / 3600
-        val days = seconds / 86400
-        if (days > 0)
-            view.text =
-                "${days} ".plus(view.context.getString(R.string.txt_day)).plus(" ${hours} ")
-                    .plus(view.context.getString(R.string.txt_hour)).plus(" ${minutes} ")
-                    .plus(view.context.getString(R.string.txt_minute)).plus(" ${sec} ")
-                    .plus(view.context.getString(R.string.txt_second))
-        else if (hours > 0)
-            view.text =
-                "${hours} ".plus(view.context.getString(R.string.txt_hour)).plus(" ${minutes} ")
-                    .plus(view.context.getString(R.string.txt_minute)).plus(" ${sec} ")
-                    .plus(view.context.getString(R.string.txt_second))
-        else if (minutes > 0)
-            view.text = "${minutes} "
-                .plus(view.context.getString(R.string.txt_minute)).plus(" ${sec} ")
-                .plus(view.context.getString(R.string.txt_second))
-        else
-            view.text = " ${sec} "
-                .plus(view.context.getString(R.string.txt_second))
-    }
-}
+
+

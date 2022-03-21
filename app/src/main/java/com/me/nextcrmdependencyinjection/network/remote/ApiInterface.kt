@@ -8,6 +8,7 @@ import com.hosco.nextcrm.callcenter.model.response.*
 import com.me.nextcrmdependencyinjection.network.common.DataResponse
 import com.me.nextcrmdependencyinjection.network.common.ListResponse
 import io.reactivex.Observable
+import io.reactivex.Single
 import retrofit2.http.*
 import java.util.*
 
@@ -36,7 +37,7 @@ interface ApiInterface {
         @Query("pageLimit") pageLimit: Int,
         @Query("page") page: Int,
         @Query("strSearch") strSearch: String
-    ): Observable<ListResponse<List<HistoryResponse?>?>?>?
+    ): Single<ListResponse<List<HistoryResponse?>?>?>?
 
     @GET("api/app-call-center/users")
     fun getListInternal(

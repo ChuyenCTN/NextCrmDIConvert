@@ -39,7 +39,6 @@ class LoginActivity : BaseActivity() {
                 false
             }
         }
-        viewModel.checkAutoLogin(this)
         return super.onCreateView(parent, name, context, attrs)
     }
 

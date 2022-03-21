@@ -12,6 +12,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.30416666666666664" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.30416666666666664" />
         <entry key="app/src/main/res/layout/item_history_list.xml" value="0.30416666666666664" />
+        <entry key="app/src/main/res/layout/item_loading_footer.xml" value="0.30416666666666664" />
       </map>
     </option>
   </component>
