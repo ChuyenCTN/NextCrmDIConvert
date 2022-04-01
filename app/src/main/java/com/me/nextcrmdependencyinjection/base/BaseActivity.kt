@@ -17,18 +17,20 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.hosco.nextcrm.callcenter.common.Const
-import com.hosco.nextcrm.callcenter.common.DialogUtils
-
 import com.me.nextcrmdependencyinjection.R
+import common.DialogUtils
+import org.koin.android.viewmodel.ext.android.viewModel
 
 
 abstract class BaseActivity : AppCompatActivity() {
+
     private var isBackPressed: Boolean = false
     protected val TAG = BaseActivity::class.java.simpleName
 
 
     var x = 10;
     var y = 15
+
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,10 +38,11 @@ abstract class BaseActivity : AppCompatActivity() {
         setContentView(getRootLayoutId())
         setupView(savedInstanceState)
 
-        val window: Window = getWindow()
+        val window: Window = window
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-        window.setStatusBarColor(getColor(R.color.colorPressButton))
+        window.statusBarColor = getColor(R.color.colorPressButton)
+
     }
 
     abstract fun getRootLayoutId(): Int
@@ -93,13 +96,13 @@ abstract class BaseActivity : AppCompatActivity() {
                 }
             }
         })
-        viewModel.eventErrorMessage.observe(this, androidx.lifecycle.Observer {
+        viewModel.eventErrorMessage.observe(this) {
             if (it != null) {
                 if (it.getContentIfNotHandled() != null) {
                     showError(it.peekContent())
                 }
             }
-        })
+        }
     }
 
     open fun showError(message: String) {

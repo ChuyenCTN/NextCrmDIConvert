@@ -3,6 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Project/MySample/NextCrmDIConvert/app/src/main/res/drawable/bg_domain_text.xml" value="0.188" />
+        <entry key="..\:/Project/MySample/NextCrmDIConvert/app/src/main/res/drawable/bg_progress.xml" value="0.191" />
+        <entry key="..\:/Project/MySample/NextCrmDIConvert/app/src/main/res/drawable/crm_progress.xml" value="0.191" />
+        <entry key="..\:/Project/MySample/NextCrmDIConvert/app/src/main/res/drawable/progress.xml" value="0.191" />
+        <entry key="..\:/Project/MySample/NextCrmDIConvert/app/src/main/res/layout/activity_domain.xml" value="0.1" />
+        <entry key="..\:/Project/MySample/NextCrmDIConvert/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Project/MySample/NextCrmDIConvert/app/src/main/res/layout/activity_splash.xml" value="0.35989583333333336" />
+        <entry key="..\:/Project/MySample/NextCrmDIConvert/app/src/main/res/layout/crm_progress_loading.xml" value="0.35989583333333336" />
+        <entry key="..\:/Project/MySample/NextCrmDIConvert/app/src/main/res/layout/crm_snackbar.xml" value="0.35989583333333336" />
+        <entry key="..\:/Project/MySample/NextCrmDIConvert/app/src/main/res/layout/custom_progress_loading.xml" value="0.35989583333333336" />
         <entry key="app/src/main/res/drawable/bg_login_button.xml" value="0.21" />
         <entry key="app/src/main/res/drawable/ic_baseline_arrow_right_alt_16.xml" value="0.21" />
         <entry key="app/src/main/res/drawable/ic_baseline_call_18.xml" value="0.21" />

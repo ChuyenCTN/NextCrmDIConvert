@@ -11,7 +11,7 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import com.hosco.nextcrm.callcenter.common.DialogUtils
+import common.DialogUtils
 
 abstract class BaseFragment : Fragment() {
     protected val TAG = BaseFragment::class.java.simpleName

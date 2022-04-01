@@ -1,5 +1,6 @@
 package com.me.nextcrmdependencyinjection.base
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable
@@ -8,7 +9,9 @@ open class BaseViewModel : ViewModel() {
     val eventLoading = MutableLiveData<Event<Boolean>>()
     val eventLoadingMore = MutableLiveData<Event<Boolean>>()
     val eventError = MutableLiveData<Event<BaseResponse>>()
-    val eventErrorMessage = MutableLiveData<Event<String>>()
+    private val _eventErrorMessage = MutableLiveData<Event<String>>()
+    private val _isShowLoading = MutableLiveData<Boolean>()
+    val eventErrorMessage: LiveData<Event<String>> = _eventErrorMessage
     val eventFailure = MutableLiveData<Event<Throwable>>()
     val eventNoData = MutableLiveData<Event<Boolean>>()
     val disposables = CompositeDisposable()
@@ -26,7 +29,7 @@ open class BaseViewModel : ViewModel() {
     }
 
     fun showError(message: String) {
-        eventErrorMessage.value = Event(message)
+        _eventErrorMessage.postValue(Event(message))
     }
 
     fun showFailure(throwable: Throwable) {

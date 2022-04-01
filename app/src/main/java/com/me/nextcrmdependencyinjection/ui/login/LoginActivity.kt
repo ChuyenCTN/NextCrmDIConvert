@@ -3,24 +3,27 @@ package com.me.nextcrmdependencyinjection.ui.login
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.text.method.PasswordTransformationMethod
 import android.util.AttributeSet
 import android.view.View
 import android.widget.EditText
-import androidx.lifecycle.ViewModelProviders
+import androidx.annotation.RequiresApi
 import com.hosco.nextcrm.callcenter.common.Const
-import com.hosco.nextcrm.callcenter.common.DialogUtils
 import com.me.nextcrmdependencyinjection.R
 import com.me.nextcrmdependencyinjection.base.BaseActivity
 import com.me.nextcrmdependencyinjection.ui.home.HomeActivity
+import com.me.nextcrmdependencyinjection.ui.splash.DomainActivity
 import com.me.nextcrmdependencyinjection.utils.SharePreferenceUtils
 import com.thekhaeng.pushdownanim.PushDownAnim
+import common.DialogUtils
 import kotlinx.android.synthetic.main.activity_login.*
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class LoginActivity : BaseActivity() {
-    var viewModel: LoginViewModel = LoginViewModel()
-    var _domain = "hosco"
+    private val viewModel: AuthViewModel by viewModel()
+    private var _domain = "hosco"
 
     override fun getRootLayoutId(): Int {
         return R.layout.activity_login
@@ -39,15 +42,15 @@ class LoginActivity : BaseActivity() {
                 false
             }
         }
-        viewModel.checkAutoLogin(this)
+//        viewModel.checkAutoLogin(this)
         return super.onCreateView(parent, name, context, attrs)
     }
 
     override fun setupViewModel() {
-        viewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
         setObserveLive(viewModel)
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     @SuppressLint("UseCompatLoadingForDrawables")
     override fun setupView(savedInstanceState: Bundle?) {
         edPassword.transformationMethod = PasswordTransformationMethod.getInstance()
@@ -59,22 +62,22 @@ class LoginActivity : BaseActivity() {
                 intent.getStringExtra(Const.DATA_DOMAIN).let { _domain = it.toString() }
             }
 
-        viewModel.dataLoginResponse().observe(this, {
+        viewModel.dataLoginResponse().observe(this) {
             startActivity(Intent(this, HomeActivity::class.java))
             finish()
-        })
+        }
 
-        viewModel.isShowLoading.observe(this, {
-            if (it) DialogUtils.showCrmLoadingDialog(this,null)
+        viewModel.isShowLoading.observe(this) {
+            if (it) DialogUtils.showCrmLoadingDialog(this, null)
             else DialogUtils.dismissCrm()
-        })
+        }
 
-        viewModel.errorMessage.observe(this, {
+        viewModel.errorMessage.observe(this) {
             val contextView = findViewById<View>(R.id.btnLogin)
             if (it != null) {
                 DialogUtils.showSnackBar(contextView, it)
             }
-        })
+        }
 
         PushDownAnim.setPushDownAnimTo(imgShowHidePass).setOnClickListener {
             viewModel.setShowHidePass(edPassword, imgShowHidePass)
@@ -84,7 +87,7 @@ class LoginActivity : BaseActivity() {
             hideKeyboard()
         }
         PushDownAnim.setPushDownAnimTo(tvOtherDomain).setOnClickListener {
-//            startActivity(Intent(this, DomainActivity::class.java))
+            startActivity(Intent(this, DomainActivity::class.java))
             SharePreferenceUtils.getInstances().logout()
         }
 

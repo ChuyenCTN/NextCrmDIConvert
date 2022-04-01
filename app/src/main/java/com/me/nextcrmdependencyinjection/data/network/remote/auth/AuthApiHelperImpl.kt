@@ -2,6 +2,7 @@ package com.me.nextcrmdependencyinjection.data.network.remote.auth
 
 import com.me.nextcrmdependencyinjection.data.model.auth.AuthRequest
 import com.me.nextcrmdependencyinjection.data.model.auth.AuthResponse
+import com.me.nextcrmdependencyinjection.data.model.auth.CustommerResponse
 import com.me.nextcrmdependencyinjection.data.network.common.DataResponse
 
 class AuthApiHelperImpl(private val authApiService: AuthApiService) : AuthHelper {
@@ -9,5 +10,6 @@ class AuthApiHelperImpl(private val authApiService: AuthApiService) : AuthHelper
         return authApiService.login(authRequest)
     }
 
-
+    override suspend fun checkExistCustomer(tenantCode: String): DataResponse<CustommerResponse?>? =
+        authApiService.checkExistCustomer(tenantCode)
 }

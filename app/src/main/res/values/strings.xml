@@ -126,5 +126,6 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="error_no_internet">Không có kết nối mạng, vui lòng thử lại sau!</string>
 
 </resources>
