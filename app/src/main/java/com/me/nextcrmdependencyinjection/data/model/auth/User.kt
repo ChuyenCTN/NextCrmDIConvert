@@ -1,6 +1,5 @@
-package com.me.nextcrmdependencyinjection.network.remote.auth
+package com.me.nextcrmdependencyinjection.data.model.auth
 import com.google.gson.annotations.SerializedName
-import com.me.nextcrmdependencyinjection.network.remote.auth.ExtentionConfig
 
 data class User(
     @SerializedName("email")

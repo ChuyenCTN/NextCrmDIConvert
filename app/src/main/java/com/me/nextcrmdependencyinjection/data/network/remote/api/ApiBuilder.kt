@@ -1,9 +1,11 @@
-package com.me.nextcrmdependencyinjection.network.remote.auth
+package com.me.nextcrmdependencyinjection.data.network.remote.api
 
 import android.content.Context
-import com.hosco.nextcrm.callcenter.api.Properties.TIME_OUT
+import com.me.nextcrmdependencyinjection.data.network.remote.api.Properties.TIME_OUT
 import com.hosco.nextcrm.callcenter.common.Const.Companion.DEBUG
 import com.hosco.nextcrm.callcenter.common.Const.Companion.REQUEST_TIMEOUT_DURATION
+
+import com.me.nextcrmdependencyinjection.utils.SharePreferenceUtils
 import com.me.nextcrmdependencyinjection.BuildConfig
 import okhttp3.Cache
 import okhttp3.Interceptor
@@ -14,30 +16,49 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-class AuthBuilder() {
+class ApiBuilder() {
 
     companion object {
-        private val authApi: AuthApi? = null
-        fun getAuthService(): AuthApi {
-            if (authApi != null) {
-                return authApi
+        private val API_SERVICE: ApiService? = null
+        fun getWebService(): ApiService {
+            if (API_SERVICE != null) {
+                return API_SERVICE
             }
             val retrofit = Retrofit.Builder().baseUrl(BuildConfig.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(createRequestInterceptorClient())
                 .build()
-            return retrofit.create(AuthApi::class.java)
+            return retrofit.create(ApiService::class.java)
         }
+        val apiService= getWebService()
     }
 
+}
+
+class ConfigAPI(
+) {
+    object API_URL {
+        fun URL_IMAGE() = "http://image.tmdb.org/t/p"
+    }
+
+    object KEY {
+        fun API_KEY() = "3956f50a726a2f785334c24759b97dc6"
+    }
+}
+
+object ApiConstant {
+    var TOKEN = "Authorization"
+    const val BEARER = "Bearer "
 }
 
 private fun createRequestInterceptorClient(): OkHttpClient {
     val interceptor = Interceptor { chain ->
         val original = chain.request()
         val requestBuilder = original.newBuilder()
+            .header("Accept", "application/json")
             .header("Content-Type", "application/json")
+            .header(ApiConstant.TOKEN,(ApiConstant.BEARER + SharePreferenceUtils.getInstances().getToken()))
             .method(original.method, original.body)
         val request = requestBuilder.build()
         chain.proceed(request)

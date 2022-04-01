@@ -15,10 +15,10 @@ import com.hosco.nextcrm.callcenter.common.DialogUtils
 
 import com.me.nextcrmdependencyinjection.R
 import com.me.nextcrmdependencyinjection.base.BaseViewModel
-import com.me.nextcrmdependencyinjection.network.remote.auth.AuthBuilder
-import com.me.nextcrmdependencyinjection.network.remote.auth.AuthRequest
-import com.me.nextcrmdependencyinjection.network.remote.auth.AuthResponse
-import com.me.nextcrmdependencyinjection.network.remote.auth.CustommerResponse
+import com.me.nextcrmdependencyinjection.data.network.remote.auth.AuthBuilder
+import com.me.nextcrmdependencyinjection.data.model.auth.AuthRequest
+import com.me.nextcrmdependencyinjection.data.model.auth.AuthResponse
+import com.me.nextcrmdependencyinjection.data.model.auth.CustommerResponse
 import com.me.nextcrmdependencyinjection.ui.home.HomeActivity
 import com.me.nextcrmdependencyinjection.utils.SharePreferenceUtils
 import io.reactivex.Completable

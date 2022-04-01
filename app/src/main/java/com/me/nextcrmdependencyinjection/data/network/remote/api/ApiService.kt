@@ -1,15 +1,14 @@
-package com.me.nextcrmdependencyinjection.remote
+package com.me.nextcrmdependencyinjection.data.network.remote.api
 
 import com.hosco.nextcrm.callcenter.model.request.AddNoteRequest
 import com.hosco.nextcrm.callcenter.model.request.ContactRequest
 import com.hosco.nextcrm.callcenter.model.request.CallNoteRequest
 import com.hosco.nextcrm.callcenter.model.request.PhoneInfoRequest
 import com.hosco.nextcrm.callcenter.model.response.*
-import com.me.nextcrmdependencyinjection.network.common.DataResponse
-import com.me.nextcrmdependencyinjection.network.common.ListResponse
+import com.me.nextcrmdependencyinjection.data.network.common.DataResponse
+import com.me.nextcrmdependencyinjection.data.network.common.ListResponse
 import io.reactivex.Observable
 import retrofit2.http.*
-import java.util.*
 
 
 interface ApiInterface {

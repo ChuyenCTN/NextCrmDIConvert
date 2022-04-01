@@ -8,9 +8,9 @@ import com.hosco.nextcrm.callcenter.model.response.PriorityResponse
 import com.hosco.nextcrm.callcenter.model.response.StateResponse
 import com.hosco.nextcrm.callcenter.model.response.TypeResponse
 import com.me.nextcrmdependencyinjection.CrmAppLication
-import com.me.nextcrmdependencyinjection.network.remote.auth.AuthRequest
-import com.me.nextcrmdependencyinjection.network.remote.auth.AuthResponse
-import com.me.nextcrmdependencyinjection.network.remote.auth.CustommerResponse
+import com.me.nextcrmdependencyinjection.data.model.auth.AuthRequest
+import com.me.nextcrmdependencyinjection.data.model.auth.AuthResponse
+import com.me.nextcrmdependencyinjection.data.model.auth.CustommerResponse
 import java.lang.reflect.Type
 
 object Key {

@@ -1,4 +1,4 @@
-package com.me.nextcrmdependencyinjection.network.remote.auth
+package com.me.nextcrmdependencyinjection.data.model.auth
 
 
 import com.google.gson.annotations.SerializedName

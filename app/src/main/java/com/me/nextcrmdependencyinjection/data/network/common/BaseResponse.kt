@@ -1,4 +1,4 @@
-package com.me.nextcrmdependencyinjection.network.common
+package com.me.nextcrmdependencyinjection.data.network.common
 
 import com.google.gson.annotations.SerializedName
 
